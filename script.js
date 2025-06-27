@@ -6,14 +6,14 @@
 
 
             const season1TeamsData = [
-                { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211313947697872986/69673.png?ex=685ea606&is=685d5486&hm=a6e76b374b5f913121a5e7a6476aafeceb9049809035fc75aedf62aa7662642c&' },
+                { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://tmssl.akamaized.net//images/wappen/head/69673.png?lm=1541550694' },
                 { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211320534365638696/aoc_fenerkusen.png?ex=685eac28&is=685d5aa8&hm=58bdffa8e802f82d46d745212a4146217ab05a5ba5d3f6cfea45feb28541995d&' },
                 { id: 3, name: 'Sokan Buruk FC', captain: 'Emre Akbaba', players: [], budget: 0, logo:'https://cdn.discordapp.com/attachments/1178002096684019726/1211379873407303691/A4-DAPBu_400x400.jpg?ex=685ee36c&is=685d91ec&hm=8cfc772af3690e06ccde9cc9447d4038ea077b7f83cbae7ea07db2830f1449ca&' },
                 { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://media.discordapp.net/attachments/1117901397191569508/1387883776062918817/image-removebg-preview_14.png?ex=685ef6fd&is=685da57d&hm=cb4792ae32fa7e479d93ac52dd06ce994c38c9ee4e737bf81496647e1b3d74b6&=&format=webp&quality=lossless' },
                 { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://media.discordapp.net/attachments/1178002096684019726/1212063001750937640/Samsunspor_Kulubu_Logosu.png?ex=685ebca2&is=685d6b22&hm=00baa6a36ed3bc310a72a4070c6e4e62a409b3424566ca0ebebd8110497262c3&=&format=webp&quality=lossless&width=763&height=948' },
             ];
             const season2TeamsData = [
-                { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211313947697872986/69673.png?ex=685ea606&is=685d5486&hm=a6e76b374b5f913121a5e7a6476aafeceb9049809035fc75aedf62aa7662642c&' },
+                { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://tmssl.akamaized.net//images/wappen/head/69673.png?lm=1541550694' },
                 { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211320534365638696/aoc_fenerkusen.png?ex=685eac28&is=685d5aa8&hm=58bdffa8e802f82d46d745212a4146217ab05a5ba5d3f6cfea45feb28541995d&' },
                 { id: 3, name: 'Panathinaikos', captain: 'Raphinha', players: [], budget: 0, logo:'https://images-ext-1.discordapp.net/external/G5GaWCb86R35Vy-o0waiGuhkBfrPUPvjC3NlIl0WvgQ/https/upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Panathinaikos.svg/2048px-Panathinaikos.svg.png?format=webp&quality=lossless&width=948&height=948' },
                 { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://media.discordapp.net/attachments/1117901397191569508/1387883776062918817/image-removebg-preview_14.png?ex=685ef6fd&is=685da57d&hm=cb4792ae32fa7e479d93ac52dd06ce994c38c9ee4e737bf81496647e1b3d74b6&=&format=webp&quality=lossless' },
@@ -548,159 +548,163 @@
 
             // --- FİKSTÜR GÖSTERME ---
             function displayFixtures() {
-            const season = document.getElementById('seasonSelectFixtures').value;
+        const season = document.getElementById('seasonSelectFixtures').value;
 
-            let fixturesData, teamsData;
+        let fixturesData, teamsData;
 
-            if (season === '1') {
-                fixturesData = season1FixturesData;
-                teamsData = season1TeamsData;
-            } else if (season === '2') {
-                fixturesData = season2FixturesData;
-                teamsData = season2TeamsData;
-            } else {
-                fixturesData = season3FixturesData;
-                teamsData = season3TeamsData;
-            }
+        if (season === '1') {
+            fixturesData = season1FixturesData;
+            teamsData = season1TeamsData;
+        } else if (season === '2') {
+            fixturesData = season2FixturesData;
+            teamsData = season2TeamsData;
+        } else {
+            fixturesData = season3FixturesData;
+            teamsData = season3TeamsData;
+        }
 
-            const container = document.getElementById('fixtures-container');
-            container.innerHTML = '';
+        const container = document.getElementById('fixtures-container');
+        container.innerHTML = '';
+        
+        const groupedByWeek = fixturesData.reduce((acc, fixture) => {
+            acc[fixture.week] = acc[fixture.week] || [];
+            acc[fixture.week].push(fixture);
+            return acc;
+        }, {});
+
+        for (const week in groupedByWeek) {
+            const weekContainer = document.createElement('div');
+            // Mobil için daha uygun bir p-x değeri veya p-y değeri düşünebiliriz.
+            // Örn: p-4 yerine sm:p-6
+            weekContainer.className = 'bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700'; 
             
-            const groupedByWeek = fixturesData.reduce((acc, fixture) => {
-                acc[fixture.week] = acc[fixture.week] || [];
-                acc[fixture.week].push(fixture);
-                return acc;
-            }, {});
+            const weekTitle = document.createElement('h3');
+            weekTitle.className = 'text-lg sm:text-xl font-bold text-white mb-4 border-b border-gray-600 pb-2'; // Başlığı mobilde küçülttük
+            weekTitle.textContent = `${week}. Hafta Maçları`;
+            weekContainer.appendChild(weekTitle);
+            
+            groupedByWeek[week].forEach(fixture => {
+                const homeTeam = teamsData.find(t => t.id === fixture.homeTeamId);
+                const awayTeam = teamsData.find(t => t.id === fixture.awayTeamId);
 
-            for (const week in groupedByWeek) {
-                const weekContainer = document.createElement('div');
-                weekContainer.className = 'bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700';
-                
-                const weekTitle = document.createElement('h3');
-                weekTitle.className = 'text-xl font-bold text-white mb-4 border-b border-gray-600 pb-2';
-                weekTitle.textContent = `${week}. Hafta Maçları`;
-                weekContainer.appendChild(weekTitle);
-                
-                groupedByWeek[week].forEach(fixture => {
-                    const homeTeam = teamsData.find(t => t.id === fixture.homeTeamId);
-                    const awayTeam = teamsData.find(t => t.id === fixture.awayTeamId);
+                const fixtureElement = document.createElement('div');
+                // Flexbox'ın mobil ve masaüstü davranışlarını ayarladık.
+                // gap-2 yerine sm:gap-4 ile boşlukları mobilde azalttık.
+                // rounded-md yerine sm:rounded-lg ile köşeleri küçülttük.
+                fixtureElement.className = 'flex items-center justify-between p-2 sm:p-3 rounded-md hover:bg-gray-700/50';
 
-                    const fixtureElement = document.createElement('div');
-                    fixtureElement.className = 'flex items-center justify-between p-3 rounded-lg hover:bg-gray-700/50';
+                let scoreDisplay;
+                if(fixture.status === 'Oynandı') {
+                    scoreDisplay = `
+                        <span class="font-bold text-lg sm:text-xl px-2 py-1.5 rounded-md bg-blue-600 text-white">${fixture.homeScore}</span>
+                        <span class="font-bold text-gray-400 mx-1 sm:mx-3">-</span>
+                        <span class="font-bold text-lg sm:text-xl px-2 py-1.5 rounded-md bg-blue-600 text-white">${fixture.awayScore}</span>
+                    `;
+                } else {
+                    // Tarih görünümünü de mobil için optimize edebiliriz.
+                    scoreDisplay = `<span class="text-xs sm:text-sm text-gray-400">${fixture.date}</span>`;
+                }
 
-                    let scoreDisplay;
-                    if(fixture.status === 'Oynandı') {
-                        scoreDisplay = `
-                            <span class="font-bold text-lg px-3 py-1 rounded-md bg-blue-600 text-white">${fixture.homeScore}</span>
-                            <span class="font-bold text-gray-400 mx-3">-</span>
-                            <span class="font-bold text-lg px-3 py-1 rounded-md bg-blue-600 text-white">${fixture.awayScore}</span>
-                        `;
-                    } else {
-                        scoreDisplay = `<span class="text-sm text-gray-400">${fixture.date}</span>`;
-                    }
-
-                    fixtureElement.innerHTML = `
-                    <div class="flex items-center gap-3 text-right justify-end w-2/5">
-                        <span class="font-semibold text-white hidden sm:inline">${homeTeam.name}</span>
-                        <img src="${homeTeam.logo}" alt="${homeTeam.name} logo" class="w-8 h-8 object-contain rounded" />
+                fixtureElement.innerHTML = `
+                    <div class="flex items-center gap-2 sm:gap-3 text-right justify-end w-2/5 sm:w-2/5 min-w-0">
+                        <span class="font-semibold text-white truncate sm:inline">${homeTeam.name}</span>
+                        <img src="${homeTeam.logo}" alt="${homeTeam.name} logo" class="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded" />
                     </div>
-                    <div class="w-1/5 text-center flex items-center justify-center">
+                    <div class="w-1/5 sm:w-1/5 text-center flex items-center justify-center min-w-max">
                         ${scoreDisplay}
                     </div>
-                    <div class="flex items-center gap-3 w-2/5">
-                        <img src="${awayTeam.logo}" alt="${awayTeam.name} logo" class="w-8 h-8 object-contain rounded" />
-                        <span class="font-semibold text-white hidden sm:inline">${awayTeam.name}</span>
+                    <div class="flex items-center gap-2 sm:gap-3 w-2/5 sm:w-2/5 min-w-0">
+                        <img src="${awayTeam.logo}" alt="${awayTeam.name} logo" class="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded" />
+                        <span class="font-semibold text-white truncate sm:inline">${awayTeam.name}</span>
                     </div>
                 `;
 
-                    weekContainer.appendChild(fixtureElement);
-                });
-                container.appendChild(weekContainer);
-            }
+                weekContainer.appendChild(fixtureElement);
+            });
+            container.appendChild(weekContainer);
         }
+    }
 
-            function displayEurocupFixtures() { 
-    const container = document.getElementById('eurocup-fixtures-container');
-    container.innerHTML = '';
+           function displayEurocupFixtures() {
+            const container = document.getElementById('eurocup-fixtures-container');
+            container.innerHTML = '';
 
-    const season = document.getElementById('seasonSelectEurocup').value;
+            const season = document.getElementById('seasonSelectEurocup').value;
 
             let fixturesData, teamsData;
 
             if (season === '1') {
                 fixturesData = eurocup23FixturesData;
                 teamsData = eurocup23TeamsData;
-            } else{
+            } else {
                 fixturesData = eurocup24FixturesData;
                 teamsData = eurocup24TeamsData;
             }
 
-    // Stage isimlerini düzenle
-    const stageNames = {
-        1: 'Yarı Final',
-        3: '3.’lük Maçı',
-        2: 'Final'
-    };
+            const stageNames = {
+                1: 'Yarı Final',
+                3: '3.’lük Maçı',
+                2: 'Final'
+            };
 
-    // Stage'lere göre gruplama ve sıralama
-    const groupedByStage = fixturesData.reduce((acc, fixture) => {
-        acc[fixture.stageId] = acc[fixture.stageId] || [];
-        acc[fixture.stageId].push(fixture);
-        return acc;
-    }, {});
+            const groupedByStage = fixturesData.reduce((acc, fixture) => {
+                acc[fixture.stageId] = acc[fixture.stageId] || [];
+                acc[fixture.stageId].push(fixture);
+                return acc;
+            }, {});
 
-    // İstenen sıra: Yarı Final, 3.lük Maçı, Final
-    const stagesOrder = [1, 3, 2];
+            const stagesOrder = [1, 3, 2];
 
-    stagesOrder.forEach(stageId => {
-        if (!groupedByStage[stageId]) return;
+            stagesOrder.forEach(stageId => {
+                if (!groupedByStage[stageId]) return;
 
-        const stageContainer = document.createElement('div');
-        stageContainer.className = 'bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 mt-6';
+                const stageContainer = document.createElement('div');
+                stageContainer.className = 'bg-gray-800 p-4 sm:p-6 rounded-xl shadow-lg border border-gray-700 max-w-2xl mx-auto mt-6';
 
-        const stageTitle = document.createElement('h3');
-        stageTitle.className = 'text-xl font-bold text-white mb-4 border-b border-blue-600 pb-2';
-        stageTitle.textContent = stageNames[stageId] || 'Maçlar';
-        stageContainer.appendChild(stageTitle);
+                const stageTitle = document.createElement('h3');
+                stageTitle.className = 'text-lg sm:text-xl font-bold text-white mb-4 border-b border-blue-600 pb-2';
+                stageTitle.textContent = stageNames[stageId] || 'Maçlar';
+                stageContainer.appendChild(stageTitle);
 
-        groupedByStage[stageId].forEach(fixture => {
-            const homeTeam = teamsData.find(t => t.id === fixture.homeTeamId);
-            const awayTeam = teamsData.find(t => t.id === fixture.awayTeamId);
+                groupedByStage[stageId].forEach(fixture => {
+                    const homeTeam = teamsData.find(t => t.id === fixture.homeTeamId);
+                    const awayTeam = teamsData.find(t => t.id === fixture.awayTeamId);
 
-            const fixtureElement = document.createElement('div');
-            fixtureElement.className = 'flex items-center justify-between p-3 rounded-lg hover:bg-gray-700/50';
+                    const fixtureElement = document.createElement('div');
+                    fixtureElement.className = 'flex items-center justify-between p-2 sm:p-3 rounded-md hover:bg-gray-700/50';
 
-            let scoreDisplay;
-            if(fixture.status === 'Oynandı') {
-                scoreDisplay = `
-                    <span class="font-bold text-lg px-3 py-1 rounded-md bg-blue-600 text-white">${fixture.homeScore}</span>
-                    <span class="font-bold text-gray-400 mx-2">-</span>
-                    <span class="font-bold text-lg px-3 py-1 rounded-md bg-blue-600 text-white">${fixture.awayScore}</span>
-                `;
-            } else {
-                scoreDisplay = `<span class="text-sm text-gray-400">${fixture.date || 'Tarih yok'}</span>`;
-            }
+                    let scoreDisplay;
+                    if (fixture.status === 'Oynandı') {
+                        scoreDisplay = `
+                            <span class="font-bold text-lg sm:text-xl px-2 py-1 rounded-md bg-blue-600 text-white">${fixture.homeScore}</span>
+                            <span class="font-bold text-gray-400 mx-3.25">-</span>
+                            <span class="font-bold text-lg sm:text-xl px-2 py-1 rounded-md bg-blue-600 text-white">${fixture.awayScore}</span>
+                        `;
+                    } else {
+                        scoreDisplay = `<span class="text-xs sm:text-sm text-gray-400">${fixture.date || 'Tarih yok'}</span>`;
+                    }
 
-            fixtureElement.innerHTML = `
-                <div class="flex items-center gap-3 text-right justify-end w-2/5">
-                    <span class="font-semibold text-white hidden sm:inline">${homeTeam ? homeTeam.name : 'Belirlenmedi'}</span>
-                    <img src="${homeTeam ? homeTeam.logo : 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f3f3.svg'}" alt="${homeTeam ? homeTeam.name : 'Belirlenmedi'} logo" class="w-8 h-8 object-contain rounded" />
-                </div>
-                <div class="w-1/5 text-center flex items-center justify-center">
-                    ${scoreDisplay}
-                </div>
-                <div class="flex items-center gap-3 w-2/5">
-                    <img src="${awayTeam ? awayTeam.logo : 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f3f3.svg'}" alt="${awayTeam ? awayTeam.name : 'Belirlenmedi'} logo" class="w-8 h-8 object-contain rounded" />
-                    <span class="font-semibold text-white hidden sm:inline">${awayTeam ? awayTeam.name : 'Belirlenmedi'}</span>
-                </div>
-            `;
+                    fixtureElement.innerHTML = `
+                        <div class="flex items-center gap-2 sm:gap-3 text-right justify-end w-2/5 min-w-0">
+                            <span class="font-semibold text-white truncate">${homeTeam ? homeTeam.name : 'Belirlenmedi'}</span>
+                            <img src="${homeTeam ? homeTeam.logo : 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f3f3.svg'}" class="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded" />
+                        </div>
+                        <div class="w-[24%] text-center flex items-center justify-center">
+                            ${scoreDisplay}
+                        </div>
+                        <div class="flex items-center gap-2 sm:gap-3 w-2/5 min-w-0">
+                            <img src="${awayTeam ? awayTeam.logo : 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f3f3.svg'}" class="w-6 h-6 sm:w-8 sm:h-8 object-contain rounded" />
+                            <span class="font-semibold text-white truncate">${awayTeam ? awayTeam.name : 'Belirlenmedi'}</span>
+                        </div>
+                    `;
 
-            stageContainer.appendChild(fixtureElement);
-        });
+                    stageContainer.appendChild(fixtureElement);
+                });
 
-        container.appendChild(stageContainer);
-    });
-}
+                container.appendChild(stageContainer);
+            });
+        }
+
 
 
 
