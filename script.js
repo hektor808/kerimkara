@@ -30,7 +30,14 @@
                 { id: 6, name: 'Bursaspor', captain: 'Yatabaré', players: ['Blair','Butto','Ataalp','Henrizzy'], budget:228.5, logo: 'https://upload.wikimedia.org/wikipedia/tr/5/5c/Bursaspor-amblem.png' }
             ];
 
-            const eurocupTeamsData = [
+            const eurocup23TeamsData = [
+                { id: 1, name: 'Almanya', captain: 'Anastasios Bakasetas', players: ['Player A', 'Player B'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e9-1f1ea.svg',},
+                { id: 2, name: 'Fransa', captain: 'Ryan Kent', players: ['Player C', 'Player D'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1eb-1f1f7.svg',},
+                { id: 3, name: 'İspanya', captain: 'Carlos', players: ['Player E', 'Player F'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1ea-1f1f8.png', },
+                { id: 4, name: 'Türkiye', captain: 'John', players: ['Player G', 'Player H'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1f9-1f1f7.svg',},
+            ];
+
+            const eurocup24TeamsData = [
                 { id: 1, name: 'San Marino', captain: 'Anastasios Bakasetas', players: ['Player A', 'Player B'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1f8-1f1f2.svg',},
                 { id: 2, name: 'Kazakistan', captain: 'Ryan Kent', players: ['Player C', 'Player D'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1f0-1f1ff.svg',},
                 { id: 3, name: 'İspanya', captain: 'Carlos', players: ['Player E', 'Player F'], logo: 'https://images.emojiterra.com/google/noto-emoji/unicode-15/color/512px/1f1ea-1f1f8.png', },
@@ -130,11 +137,18 @@
                 { week: 12, homeTeamId: 1, awayTeamId: 2, homeScore: 3, awayScore: 0, status: 'Oynandı'},
                 { week: 12, homeTeamId: 6, awayTeamId: 3, homeScore: 3, awayScore: 0, status: 'Oynandı'}
             ];
-            const eurocupFixturesData = [
-                { stageId: 1, week: 1, homeTeamId: 2, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı',date: '27.06.2025 15:00' },
-                { stageId: 1, week: 1, homeTeamId: 1, awayTeamId: 4, homeScore: 17, awayScore: 1, status: 'Oynandı' },
-                { stageId: 2, week: 2, homeTeamId: 1, awayTeamId: null, homeScore: null, awayScore: null, status: 'Oynanmadı' },
-                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: null, homeScore: null, awayScore: null, status: 'Oynanmadı' }
+            const eurocup23FixturesData = [
+                { stageId: 1, week: 1, homeTeamId: 1, awayTeamId: 4, homeScore: 4, awayScore: 1, status: 'Oynandı' },
+                { stageId: 1, week: 1, homeTeamId: 2, awayTeamId: 3, homeScore: 3, awayScore: 7, status: 'Oynandı' },
+                { stageId: 2, week: 2, homeTeamId: 2, awayTeamId: 1, homeScore: 0, awayScore: 7, status: 'Oynandı' },
+                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: 9, awayScore: 1, status: 'Oynandı' }
+                
+                ];
+            const eurocup24FixturesData = [
+                { stageId: 1, week: 1, homeTeamId: 2, awayTeamId: 3, homeScore: 7, awayScore: 5, status: 'Oynandı',date: '27.06.2025 15:00' },
+                { stageId: 1, week: 1, homeTeamId: 1, awayTeamId: 4, homeScore: 17, awayScore: 1, status: 'Oynandı'},
+                { stageId: 2, week: 2, homeTeamId: 1, awayTeamId: 2, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'28.06.2025'},
+                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'28.06.2025' }
                 
                 ];
                  const season1PlayerStats = [
@@ -609,6 +623,18 @@
     const container = document.getElementById('eurocup-fixtures-container');
     container.innerHTML = '';
 
+    const season = document.getElementById('seasonSelectEurocup').value;
+
+            let fixturesData, teamsData;
+
+            if (season === '1') {
+                fixturesData = eurocup23FixturesData;
+                teamsData = eurocup23TeamsData;
+            } else{
+                fixturesData = eurocup24FixturesData;
+                teamsData = eurocup24TeamsData;
+            }
+
     // Stage isimlerini düzenle
     const stageNames = {
         1: 'Yarı Final',
@@ -617,7 +643,7 @@
     };
 
     // Stage'lere göre gruplama ve sıralama
-    const groupedByStage = eurocupFixturesData.reduce((acc, fixture) => {
+    const groupedByStage = fixturesData.reduce((acc, fixture) => {
         acc[fixture.stageId] = acc[fixture.stageId] || [];
         acc[fixture.stageId].push(fixture);
         return acc;
@@ -638,8 +664,8 @@
         stageContainer.appendChild(stageTitle);
 
         groupedByStage[stageId].forEach(fixture => {
-            const homeTeam = eurocupTeamsData.find(t => t.id === fixture.homeTeamId);
-            const awayTeam = eurocupTeamsData.find(t => t.id === fixture.awayTeamId);
+            const homeTeam = teamsData.find(t => t.id === fixture.homeTeamId);
+            const awayTeam = teamsData.find(t => t.id === fixture.awayTeamId);
 
             const fixtureElement = document.createElement('div');
             fixtureElement.className = 'flex items-center justify-between p-3 rounded-lg hover:bg-gray-700/50';
@@ -782,6 +808,7 @@
                 displayTopAssists();
                 displayTopCleanSheets();
             });
+            document.getElementById('seasonSelectEurocup').addEventListener('change', displayEurocupFixtures);
             displayTopScorers();
             displayTopAssists();
             displayTopCleanSheets();
