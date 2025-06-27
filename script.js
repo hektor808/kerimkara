@@ -7,18 +7,18 @@
 
             const season1TeamsData = [
                 { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://tmssl.akamaized.net//images/wappen/head/69673.png?lm=1541550694' },
-                { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211320534365638696/aoc_fenerkusen.png?ex=685eac28&is=685d5aa8&hm=58bdffa8e802f82d46d745212a4146217ab05a5ba5d3f6cfea45feb28541995d&' },
-                { id: 3, name: 'Sokan Buruk FC', captain: 'Emre Akbaba', players: [], budget: 0, logo:'https://cdn.discordapp.com/attachments/1178002096684019726/1211379873407303691/A4-DAPBu_400x400.jpg?ex=685ee36c&is=685d91ec&hm=8cfc772af3690e06ccde9cc9447d4038ea077b7f83cbae7ea07db2830f1449ca&' },
-                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://media.discordapp.net/attachments/1117901397191569508/1387883776062918817/image-removebg-preview_14.png?ex=685ef6fd&is=685da57d&hm=cb4792ae32fa7e479d93ac52dd06ce994c38c9ee4e737bf81496647e1b3d74b6&=&format=webp&quality=lossless' },
-                { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://media.discordapp.net/attachments/1178002096684019726/1212063001750937640/Samsunspor_Kulubu_Logosu.png?ex=685ebca2&is=685d6b22&hm=00baa6a36ed3bc310a72a4070c6e4e62a409b3424566ca0ebebd8110497262c3&=&format=webp&quality=lossless&width=763&height=948' },
+                { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'img/fenerkusen.png' },
+                { id: 3, name: 'Sokan Buruk FC', captain: 'Emre Akbaba', players: [], budget: 0, logo:'img/sokan.png' },
+                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
+                { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
             ];
             const season2TeamsData = [
                 { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://tmssl.akamaized.net//images/wappen/head/69673.png?lm=1541550694' },
-                { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'https://cdn.discordapp.com/attachments/1178002096684019726/1211320534365638696/aoc_fenerkusen.png?ex=685eac28&is=685d5aa8&hm=58bdffa8e802f82d46d745212a4146217ab05a5ba5d3f6cfea45feb28541995d&' },
-                { id: 3, name: 'Panathinaikos', captain: 'Raphinha', players: [], budget: 0, logo:'https://images-ext-1.discordapp.net/external/G5GaWCb86R35Vy-o0waiGuhkBfrPUPvjC3NlIl0WvgQ/https/upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Panathinaikos.svg/2048px-Panathinaikos.svg.png?format=webp&quality=lossless&width=948&height=948' },
-                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://media.discordapp.net/attachments/1117901397191569508/1387883776062918817/image-removebg-preview_14.png?ex=685ef6fd&is=685da57d&hm=cb4792ae32fa7e479d93ac52dd06ce994c38c9ee4e737bf81496647e1b3d74b6&=&format=webp&quality=lossless' },
-                { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://media.discordapp.net/attachments/1178002096684019726/1212063001750937640/Samsunspor_Kulubu_Logosu.png?ex=685ebca2&is=685d6b22&hm=00baa6a36ed3bc310a72a4070c6e4e62a409b3424566ca0ebebd8110497262c3&=&format=webp&quality=lossless&width=763&height=948' },
-                { id: 6, name: 'Nankatsu SC', captain: 'Mykhailo Mudryk', players: [], budget: 0, logo: 'https://media.discordapp.net/attachments/1178002096684019726/1221484683578183690/76176.png?ex=685ebc42&is=685d6ac2&hm=74bd524945c013b35447cbb7b0f4f972bc329356e686dbe976c2f75c23284b2f&=&format=webp&quality=lossless' },
+                { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'img/fenerkusen.png' },
+                { id: 3, name: 'Panathinaikos', captain: 'Raphinha', players: [], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Panathinaikos.svg/2048px-Panathinaikos.svg.png' },
+                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'img/seckin.png' },
+                { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
+                { id: 6, name: 'Nankatsu SC', captain: 'Mykhailo Mudryk', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
                 { id: 7, name: 'FC Barcelona', captain: 'Andres Iniesta', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/4/47/FC_Barcelona.png' },
             ];
             const season3TeamsData = [
