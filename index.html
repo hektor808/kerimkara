@@ -195,20 +195,19 @@
 
         <section id="eurocup" class="content-section">
              <h2 class="text-3xl font-bold text-center mb-8 text-white">EUROCUP 2025</h2>
-            <div class="bg-gray-800 rounded-xl shadow-lg overflow-x-auto border border-gray-700">
-                <div class="flex justify-start p-3">
-                 <select id="seasonSelectEurocup" class="p-2 rounded bg-gray-800 text-white border border-gray-600">
+            <div class="flex justify-start p-3 mb-4">
+            <select id="seasonSelectEurocup" class="p-2 rounded bg-gray-800 text-white border border-gray-600 w-full sm:w-auto">
                 <option value="1">EuroCup 24</option>
                 <option value="2" selected>EuroCup 25</option>
-             </select>
-        </div>
-                <table class="w-full text-sm text-left text-gray-300">
-                    <tbody id="eurocup-fixtures-container">
-                        <!-- Puan durumu verileri JavaScript ile buraya eklenecek -->
-                    </tbody>
-                </table>
+            </select>
             </div>
-        </section>
+            <div class="overflow-x-auto px-3 pb-3">
+            <table class="min-w-full text-sm text-left text-gray-300">
+                <tbody id="eurocup-fixtures-container">
+                <!-- JS içerik -->
+                </tbody>
+            </table>
+            </div>
 
         <!-- Kurallar Section -->
         <section id="kurallar" class="content-section">
