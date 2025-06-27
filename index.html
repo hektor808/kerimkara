@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAX Kerim Kara Ligi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg shadow-blue-500/10">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-bold text-white flex items-center gap-3">
+                    <img src="https://cdn.discordapp.com/icons/1178002095346028645/944403461b0f45df2577e0ceedc1f1a0.png?size=100&quality=lossless" width="40" height="40"></img>
+                    HAX Kerim Kara League
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#anasayfa" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Ana Sayfa</a>
+                    <a href="#puan" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Puan Durumu</a>
+                    <a href="#fikstur" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Fikstür</a>
+                    <a href="#takimlar" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Takımlar</a>
+                    <a href="#kurallar" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Kurallar</a>
+                    <a href="#eurocup" class="nav-link eurocup-link text-orange-400 hover:text-orange-300 transition duration-300 pb-2 drop-shadow-[0_0_6px_rgba(255,115,0,0.7)] hover:drop-shadow-[0_0_10px_rgba(255,140,0,1)]">EUROCUP</a>
+                    <a href="#kralliklar" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Krallıklar</a>
+                    <a href="#butceler" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300 pb-2">Bütçeler</a>
+                    <a href="#cezalar" class="nav-link cezalar-link hover:text-red-300 transition-colors duration-300 pb-2">Cezalar</a>
+                    <a href="#muze" class="nav-link text-gray-300 hover:text-blue-400 duration-300 pb-2">Müze</a>
+                    <a href="#iletisim" class="nav-link text-gray-300 hover:text-blue-400 duration-300 pb-2">İletişim</a>
+                </div>
+
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <a href="#anasayfa" class="block py-2 px-4 text-sm nav-link-mobile">Ana Sayfa</a>
+                <a href="#puan" class="block py-2 px-4 text-sm nav-link-mobile">Puan Durumu</a>
+                <a href="#fikstur" class="block py-2 px-4 text-sm nav-link-mobile">Fikstür</a>
+                <a href="#takimlar" class="block py-2 px-4 text-sm nav-link-mobile">Takımlar</a>
+                <a href="#kurallar" class="block py-2 px-4 text-sm nav-link-mobile">Kurallar</a>
+                <a href="#eurocup" class="block py-2 px-4 text-sm nav-link-mobile">EUROCUP</a>
+                <a href="#kralliklar" class="block py-2 px-4 text-sm nav-link-mobile">Krallıklar</a>
+                <a href="#butceler" class="block py-2 px-4 text-sm nav-link-mobile">Bütçeler</a>
+                <a href="#cezalar" class="block py-2 px-4 text-sm nav-link-mobile">Cezalar</a>
+                <a href="#muze" class="block py-2 px-4 text-sm nav-link-mobile">Müze</a>
+                <a href="#iletisim" class="block py-2 px-4 text-sm nav-link-mobile">İletişim</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        
+        <!-- Ana Sayfa Section -->
+        <section id="anasayfa" class="content-section active">
+            <div class="text-center bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                   HAX  <span class="text-blue-500">Kerim Kara</span> League'e Hoş Geldiniz!
+                </h1>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-6">
+                    Rekabetin, heyecanın ve dostluğun buluştuğu efsanevi Haxball ligi. En iyi oyuncular burada kozlarını paylaşıyor. Sen de bu heyecana ortak ol!
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="#puan" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                        Puan Durumunu Gör
+                    </a>
+                    <a href="#fikstur" class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-transform transform hover:scale-105">
+                        Fikstür
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center">
+                    <i class="fas fa-trophy text-4xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">Şampiyonluk Yarışı</h3>
+                    <p class="text-gray-400 mt-2">3. Sezonun şampiyonu kim olacak?</p>
+                </div>
+                 <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center">
+                    <i class="fas fa-calendar-alt text-4xl text-green-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">Canlı Maçlar</h3>
+                    <p class="text-gray-400 mt-2">Maçları canlı olarak takip edin ve takımınıza destek olun.</p>
+                </div>
+                 <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 text-center">
+                    <i class="fas fa-users text-4xl text-red-400 mb-4"></i>
+                    <h3 class="text-xl font-bold text-white">Güçlü Topluluk</h3>
+                    <p class="text-gray-400 mt-2">Ligimizdeki oyuncularla tanışın, sohbet edin ve yeni arkadaşlar edinin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Puan Durumu Section -->
+        <section id="puan" class="content-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Puan Durumu</h2>
+            <div class="mb-4">
+            <select id="seasonSelectStandings" class="mb-4 px-4 py-2 rounded bg-gray-800 text-white border border-gray-600">
+            <option value="1">Sezon 1</option>
+            <option value="2">Sezon 2</option>
+            <option value="3" selected>Sezon 3</option>
+            </select>
+            </div>
+            <div class="bg-gray-800 rounded-xl shadow-lg overflow-x-auto border border-gray-700">
+                <table class="w-full text-sm text-left text-gray-300">
+                    <thead class="text-xs text-gray-100 uppercase bg-gray-700">
+                        <tr>
+                            <th scope="col" class="px-6 py-4">#</th>
+                            <th scope="col" class="px-6 py-4">Takım</th>
+                            <th scope="col" class="px-6 py-4 text-center">O</th>
+                            <th scope="col" class="px-6 py-4 text-center">G</th>
+                            <th scope="col" class="px-6 py-4 text-center">B</th>
+                            <th scope="col" class="px-6 py-4 text-center">M</th>
+                            <th scope="col" class="px-6 py-4 text-center">A</th>
+                            <th scope="col" class="px-6 py-4 text-center">Y</th>
+                            <th scope="col" class="px-6 py-4 text-center">AV</th>
+                            <th scope="col" class="px-6 py-4 text-center">P</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-table-body">
+                        <!-- Puan durumu verileri JavaScript ile buraya eklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Fikstür Section -->
+        <section id="fikstur" class="content-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Fikstür</h2>
+            <div class="mb-3">
+            <select id="seasonSelectFixtures" class="p-2 rounded bg-gray-800 text-white">
+                <option value="1">Sezon 1</option>
+                <option value="2">Sezon 2</option>
+                <option value="3" selected>Sezon 3</option>
+            </select>
+            </div>
+            <div id="fixtures-container" class="space-y-6">
+                <!-- Fikstür verileri JavaScript ile buraya eklenecek -->
+            </div>
+        </section>
+
+        <section id="kralliklar" class="content-section">
+        <h2 class="text-3xl font-bold text-center mb-8 text-white">Krallıklar</h2>
+        <!-- Sezon seçiciyi ortalamak için container ekledik -->
+        <div class="flex justify-center">
+            <select id="seasonSelectKings" class="p-2 rounded bg-gray-800 text-white border border-gray-600">
+            <option value="1">Sezon 1</option>
+            <option value="2">Sezon 2</option>
+            <option value="3" selected>Sezon 3</option>
+            </select>
+        </div>
+
+        <div id="kralliklar-container" class="max-w-4xl mx-auto mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div id="top-scorers" class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700"></div>
+            <div id="top-assists" class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700"></div>
+            <div id="top-cleansheets" class="bg-gray-800 p-6 rounded-xl shadow-md border border-gray-700"></div>
+        </div>
+        </section>
+
+
+        <!-- Takımlar Section -->
+        <section id="takimlar" class="content-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Lige Katılan Takımlar</h2>
+            <div id="teams-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                 <!-- Takım kartları JavaScript ile buraya eklenecek -->
+            </div>
+        </section>
+
+        <section id="eurocup" class="content-section">
+             <h2 class="text-3xl font-bold text-center mb-8 text-white">EUROCUP 2025</h2>
+            <div class="bg-gray-800 rounded-xl shadow-lg overflow-x-auto border border-gray-700">
+                <table class="w-full text-sm text-left text-gray-300">
+                    <tbody id="eurocup-fixtures-container">
+                        <!-- Puan durumu verileri JavaScript ile buraya eklenecek -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Kurallar Section -->
+        <section id="kurallar" class="content-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Lig Kuralları</h2>
+            <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 max-w-4xl mx-auto">
+                <ul class="list-disc list-inside space-y-4 text-gray-300">
+                   <li>Takımların ratingi en yüksek ilk 4 oyuncusunun rating ortalaması 90'ı geçemez.</li>
+                    <li>Takımların sezon içinde isim değişimlerine müsaade yoktur.</li>
+                    <li>80 üzeri oyuncular maçlık alınamaz.</li>
+                     <li>Maça 30 dakikadan az kaldıysa wc atılamaz.</li>
+                     <li>Kupa maçları, lig ve süper kupa V4 Futsal formatındadır.</li>
+                     <li>Maçlardan önce ekran açılır, kontrol yapılır.</li>
+                     <li>4 def kuralı yoktur, 4 def serbesttir.</li>
+                     <li>Maçlar 7+7 dakika olarak oynanır.</li>
+                     <li>Hakem kararlarına yoğun itiraz sarı kart sebebidir, hakeme hakaret kırmızı kart ve sunucuda uyarıya sebep olur.</li>
+                     <li>Maçta rakibe küfür sarı kart, ağır küfür kırmızı kart sebebidir, ağır olmayan küfür tekrarlanırsa kırmızı kart gösterilecektir.</li>
+                     <li>Kupa maçlarında beraberlik durumunda, takımlar arasında üstünlük sağlanamadığı takdirde 3+3 dakikalık uzatmalar oynanır. Uzatma süresi sonunda da beraberlik devam ederse, seri penaltı atışlarına geçilir. Seri penaltı atışlarında takımlar, istedikleri oyuncuları kaleye koyabilir.</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Bütçeler-->
+        <section id="butceler" class="content-section">
+            <h2 class="text-3xl font-bold text-center mb-8 text-white">Bütçeler</h2>
+            <div id="budget-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                 <!-- Takım kartları JavaScript ile buraya eklenecek -->
+            </div>
+        </section>
+
+        <section id="cezalar" class="content-section">
+            <h2 class="text-2xl text-white font-bold mb-8 text-center">🛑 Cezalı Oyuncular</h2>
+            <div id="suspended-players-container" class="space-y-4">
+                
+            </div>
+        </section>
+
+        <section id="muze" class="content-section">
+            <h2 class="text-3xl font-bold text-white text-center mt-10 mb-6">Müze</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <!-- Çankırı İl Özel İdaresi -->
+            <div class="bg-gradient-to-br from-yellow-100/20 via-blue-100/20 to-yellow-100/20 border border-yellow-500 rounded-xl p-6 shadow-xl relative">
+                <div class="flex items-center mb-4 gap-3">
+                <img src="https://media.discordapp.net/attachments/1178002096684019726/1211313947697872986/69673.png?ex=685ea606&is=685d5486&hm=a6e76b374b5f913121a5e7a6476aafeceb9049809035fc75aedf62aa7662642c&=&format=webp&quality=lossless" alt="Çankırı Logo" class="w-10 h-10 object-contain rounded" />
+                <div>
+                    <h3 class="text-2xl font-bold text-yellow-400">Çankırı İl Özel İdaresi</h3>
+                    <p class="text-xs italic text-gray-100">Beşiktaş</p>
+                </div>
+                </div>
+                <ul class="text-white space-y-2 ml-2">
+                <li class="flex items-center gap-2">
+                    <img src="https://media.discordapp.net/attachments/1117901397191569508/1387868456686456903/20.png?ex=685ee8b9&is=685d9739&hm=5a69bef76db65620df0359e2c17db8cc1c48e03748a95766eaf66f19894253a2&=&format=webp&quality=lossless" alt="Kupa" class="w-6 h-8" />
+                    <span><span class="text-yellow-300 font-semibold">Lig Şampiyonluğu</span> x2</span>
+                </li>
+                <li class="flex items-center gap-2">
+                    <img src="https://media.discordapp.net/attachments/1117901397191569508/1387868596184678515/149.png?ex=685ee8da&is=685d975a&hm=48e023f7dc5dd35e6f8b03d480e2d8da3068052e0fbc0d2a03bd8b1bb7319895&=&format=webp&quality=lossless" alt="Kupa" class="w-6 h-8" />
+                    <span><span class="text-yellow-300 font-semibold">Butto Süperkupası</span> x1</span>
+                </li>
+                </ul>
+            </div>
+
+            <!-- Sokan Buruk FC -->
+            <div class="bg-gradient-to-br from-black/1000 via-blue-900/60 to-black/400 border border-blue-600 rounded-xl p-6 shadow-xl relative">
+                <div class="flex items-center mb-4 gap-3">
+                <img src="https://media.discordapp.net/attachments/1178002096684019726/1211379873407303691/A4-DAPBu_400x400.jpg?ex=685ee36c&is=685d91ec&hm=8cfc772af3690e06ccde9cc9447d4038ea077b7f83cbae7ea07db2830f1449ca&=&format=webp" alt="Sokan Buruk FC Logo" class="w-10 h-10 object-contain rounded" />
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-400">Sokan Buruk FC</h3>
+                    <p class="text-xs italic text-gray-100">Galatasaray</p>
+                </div>
+                </div>
+                <ul class="text-white space-y-2 ml-2">
+                <li class="flex items-center gap-2">
+                    <img src="https://media.discordapp.net/attachments/1117901397191569508/1387868483919941723/148.png?ex=685ee8bf&is=685d973f&hm=4ef2415727a1ea4fd4080d0f977fecdca9dd6e4962bbed3a0532213d0fa396a9&=&format=webp&quality=lossless" alt="Kupa" class="w-6 h-8" />
+                    <span><span class="text-blue-300 font-semibold">Taşkafa Kupası</span> x1</span>
+                </li>
+                </ul>
+            </div>
+            <div class="bg-gradient-to-br from-red-100/10 via-yellow-200/20 to-black/10 border border-yellow-600 rounded-xl p-6 shadow-xl relative">
+            <div class="flex items-center mb-4 gap-3">
+                <img src="https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f1e9-1f1ea.svg" alt="Almanya Logo" class="w-10 h-10 object-contain rounded" />
+                <div>
+                <h3 class="text-2xl font-bold text-purple-100">Almanya</h3>
+                </div>
+            </div>
+            <ul class="text-white space-y-2 ml-2">
+                <li class="flex items-center gap-2">
+                <img src="https://media.discordapp.net/attachments/1117901397191569508/1387868685103796357/102.png?ex=685ee8ef&is=685d976f&hm=08c9b30f06797f957289a27d3bc188580e5e1d0debe6304a007a3ace88b2df05&=&format=webp&quality=lossless" alt="Kupa" class="w-6 h-8" />
+                <span><span class="text-gray-300 font-semibold">Firibaba EuroCUP</span> x1</span>
+                </li>
+            </ul>
+            </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-12">
+        <div class="container mx-auto px-4 py-6 text-center text-gray-400">
+            <p>&copy; <span id="current-year"></span> Kerim Kara Haxball Ligi. Tüm hakları saklıdır.</p>
+            <p class="text-sm mt-1">Bu web sitesi bir hayran projesidir ve Haxball ile resmi bir bağlantısı yoktur.</p>
+        </div>
+    </footer>
+
+
+    
+
+</body>
+</html>
