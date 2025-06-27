@@ -138,18 +138,19 @@
 
         <!-- Fikstür Section -->
         <section id="fikstur" class="content-section">
-            <h2 class="text-3xl font-bold text-center mb-8 text-white">Fikstür</h2>
-            <div class="mb-3">
-            <select id="seasonSelectFixtures" class="p-2 rounded bg-gray-800 text-white">
+        <h2 class="text-3xl font-bold text-center mb-8 text-white">Fikstür</h2>
+        <div class="mb-6 flex justify-center"> <!-- Sezon seçici ortalandı ve biraz alt boşluk artırıldı -->
+            <select id="seasonSelectFixtures" class="p-2 rounded bg-gray-800 text-white w-40 text-center">
                 <option value="1">Sezon 1</option>
                 <option value="2">Sezon 2</option>
                 <option value="3" selected>Sezon 3</option>
             </select>
-            </div>
-            <div id="fixtures-container" class="space-y-6">
-                <!-- Fikstür verileri JavaScript ile buraya eklenecek -->
-            </div>
-        </section>
+        </div>
+        <div id="fixtures-container" class="space-y-8"> <!-- Hafta kutuları arasındaki boşluk artırıldı -->
+            <!-- Fikstür verileri JavaScript ile buraya eklenecek -->
+        </div>
+    </section>
+
 
         <section id="kralliklar" class="content-section">
         <h2 class="text-3xl font-bold text-center mb-8 text-white">Krallıklar</h2>
@@ -208,6 +209,7 @@
                 </tbody>
             </table>
             </div>
+        </section>
 
         <!-- Kurallar Section -->
         <section id="kurallar" class="content-section">
