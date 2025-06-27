@@ -18,7 +18,7 @@
                 { id: 3, name: 'Panathinaikos', captain: 'Raphinha', players: [], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Panathinaikos.svg/2048px-Panathinaikos.svg.png' },
                 { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'img/seckin.png' },
                 { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
-                { id: 6, name: 'Nankatsu SC', captain: 'Mykhailo Mudryk', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
+                { id: 6, name: 'Nankatsu SC', captain: 'Mykhailo Mudryk', players: [], budget: 0, logo: 'img/nankatsu.png' },
                 { id: 7, name: 'FC Barcelona', captain: 'Andres Iniesta', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/4/47/FC_Barcelona.png' },
             ];
             const season3TeamsData = [
