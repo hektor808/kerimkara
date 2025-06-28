@@ -9,7 +9,7 @@
                 { id: 1, name: 'Çankırı İl Özel İdaresi', captain: 'Leroy Sane', players: [], budget:0, logo: 'https://tmssl.akamaized.net//images/wappen/head/69673.png?lm=1541550694' },
                 { id: 2, name: 'AOÇ Fenerkusen 23', captain: 'Xabi Alonso', players: [], budget: 0, logo: 'img/fenerkusen.png' },
                 { id: 3, name: 'Sokan Buruk FC', captain: 'Emre Akbaba', players: [], budget: 0, logo:'img/sokan.png' },
-                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
+                { id: 4, name: 'Seçkinler FC', captain: 'Guti Hernandez', players: [], budget: 0, logo:'img/seckin.png' },
                 { id: 5, name: 'Samsun SF', captain: 'Elkeson', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/d/d0/Samsunspor_Kul%C3%BCb%C3%BC_Logosu.png' },
             ];
             const season2TeamsData = [
@@ -46,9 +46,9 @@
 
 
             const season3FixturesData = [
-                { week: 1, homeTeamId: 2, awayTeamId: 1, homeScore: null, awayScore: null, status: 'Oynanmadı', date: 'Belirsiz' },
-                { week: 1, homeTeamId: 3, awayTeamId: 4, homeScore: null, awayScore: null, status: 'Oynanmadı' ,date: 'Belirsiz' },
-                { week: 1, homeTeamId: 6, awayTeamId: 5, homeScore: null, awayScore: null, status: 'Oynanmadı' ,date: 'Belirsiz' },
+                { week: 1, homeTeamId: 2, awayTeamId: 1, homeScore: null, awayScore: null, status: 'Oynanmadı', date: '30.06.2025-01.07.2025' },
+                { week: 1, homeTeamId: 3, awayTeamId: 4, homeScore: null, awayScore: null, status: 'Oynanmadı' ,date: '30.06.2025-01.07.2025' },
+                { week: 1, homeTeamId: 6, awayTeamId: 5, homeScore: null, awayScore: null, status: 'Oynanmadı' ,date: '30.06.2025-01.07.2025' },
                 { week: 2, homeTeamId: 1, awayTeamId: 5, homeScore: null, awayScore: null, status: 'Oynanmadı', date: 'Belirsiz' },
                 { week: 2, homeTeamId: 4, awayTeamId: 6, homeScore: null, awayScore: null, status: 'Oynanmadı', date: 'Belirsiz' },
                 { week: 2, homeTeamId: 2, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı', date: 'Belirsiz' },
@@ -147,8 +147,8 @@
             const eurocup24FixturesData = [
                 { stageId: 1, week: 1, homeTeamId: 2, awayTeamId: 3, homeScore: 7, awayScore: 5, status: 'Oynandı',date: '27.06.2025 15:00' },
                 { stageId: 1, week: 1, homeTeamId: 1, awayTeamId: 4, homeScore: 17, awayScore: 1, status: 'Oynandı'},
-                { stageId: 2, week: 2, homeTeamId: 1, awayTeamId: 2, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'28.06.2025'},
-                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'28.06.2025' }
+                { stageId: 2, week: 2, homeTeamId: 1, awayTeamId: 2, homeScore: 1, awayScore: 2, status: 'Oynandı', date:'29.06.2025'},
+                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'29.06.2025' }
                 
                 ];
                  const season1PlayerStats = [
