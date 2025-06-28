@@ -22,12 +22,12 @@
                 { id: 7, name: 'FC Barcelona', captain: 'Andres Iniesta', players: [], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/4/47/FC_Barcelona.png' },
             ];
             const season3TeamsData = [
-                { id: 1, name: 'Galatasaray', captain: 'Beltran', players: ['Dodo','Erdem','HtcaNN'], budget:-60, logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Galatasaray_AS_logo_2025.svg/697px-Galatasaray_AS_logo_2025.svg.png' },
-                { id: 2, name: 'Fenerbahçe', captain: 'Waffle', players: ['Saras','Sava'], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/8/86/Fenerbah%C3%A7e_SK.png' },
-                { id: 3, name: 'Beşiktaş', captain: 'Firikinuks', players: ['Arazz','Asta','Tuna'], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/BesiktasJK-Logo.svg/782px-BesiktasJK-Logo.svg.png' },
-                { id: 4, name: 'Trabzonspor', captain: 'Bahamonde', players: ['BKL1','Vardy','GABO','Algan','Tolgacion'], budget: 0, logo:'https://upload.wikimedia.org/wikipedia/tr/a/ab/TrabzonsporAmblemi.png' },
-                { id: 5, name: 'İstanbul Başakşehir', captain: 'Tolgamer', players: ['Shuzky','Elkeson','Miella','German','Tolgamer'], budget: 0, logo: 'https://upload.wikimedia.org/wikipedia/tr/c/cd/%C4%B0stanbul_Ba%C5%9Fak%C5%9Fehir_FK.png' },
-                { id: 6, name: 'Bursaspor', captain: 'Yatabaré', players: ['Blair','Butto','Ataalp','Henrizzy'], budget:228.5, logo: 'https://upload.wikimedia.org/wikipedia/tr/5/5c/Bursaspor-amblem.png' }
+                { id: 1, name: 'Galatasaray', captain: 'Beltran', players: ['Dodo','Erdem','HtcaNN'], budget:-21, logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Galatasaray_AS_logo_2025.svg/697px-Galatasaray_AS_logo_2025.svg.png' },
+                { id: 2, name: 'Fenerbahçe', captain: 'Waffle', players: ['Saras','Sava'], budget: 29, logo: 'https://upload.wikimedia.org/wikipedia/tr/8/86/Fenerbah%C3%A7e_SK.png' },
+                { id: 3, name: 'Beşiktaş', captain: 'Firikinuks', players: ['Arazz','Asta','Tuna'], budget: 39, logo:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/BesiktasJK-Logo.svg/782px-BesiktasJK-Logo.svg.png' },
+                { id: 4, name: 'Trabzonspor', captain: 'Bahamonde', players: ['BKL1','Vardy','GABO','Algan','Tolgacion'], budget: 39, logo:'https://upload.wikimedia.org/wikipedia/tr/a/ab/TrabzonsporAmblemi.png' },
+                { id: 5, name: 'İstanbul Başakşehir', captain: 'Tolgamer', players: ['Shuzky','Elkeson','Miella','German','Tolgamer'], budget: 39, logo: 'https://upload.wikimedia.org/wikipedia/tr/c/cd/%C4%B0stanbul_Ba%C5%9Fak%C5%9Fehir_FK.png' },
+                { id: 6, name: 'Bursaspor', captain: 'Yatabaré', players: ['Blair','Butto','Ataalp','Henrizzy'], budget:288, logo: 'https://upload.wikimedia.org/wikipedia/tr/5/5c/Bursaspor-amblem.png' }
             ];
 
             const eurocup23TeamsData = [
