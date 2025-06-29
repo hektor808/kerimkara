@@ -148,7 +148,7 @@
                 { stageId: 1, week: 1, homeTeamId: 2, awayTeamId: 3, homeScore: 7, awayScore: 5, status: 'Oynandı',date: '27.06.2025 15:00' },
                 { stageId: 1, week: 1, homeTeamId: 1, awayTeamId: 4, homeScore: 17, awayScore: 1, status: 'Oynandı'},
                 { stageId: 2, week: 2, homeTeamId: 1, awayTeamId: 2, homeScore: 1, awayScore: 2, status: 'Oynandı', date:'29.06.2025'},
-                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: 13, awayScore: 1, status: 'Oynandı', date:'29.06.2025' }
+                { stageId: 3, week: 2, homeTeamId: 4, awayTeamId: 3, homeScore: null, awayScore: null, status: 'Oynanmadı', date:'29.06.2025' }
                 
                 ];
                  const season1PlayerStats = [
